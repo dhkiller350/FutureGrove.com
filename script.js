@@ -1,443 +1,115 @@
-{
-  "album_type": "compilation",
-  "total_tracks": 9,
-  "available_markets": ["CA", "BR", "IT"],
-  "external_urls": {
-    "spotify": "string"
-  },
-  "href": "string",
-  "id": "2up3OPMp9Tb4dAKM2erWXQ",
-  "images": [
-    {
-      "url": "https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228",
-      "height": 300,
-      "width": 300
-    }
-  ],
-  "name": "string",
-  "release_date": "1981-12",
-  "release_date_precision": "year",
-  "restrictions": {
-    "reason": "market"
-  },
-  "type": "album",
-  "uri": "spotify:album:2up3OPMp9Tb4dAKM2erWXQ",
-  "artists": [
-    {
-      "external_urls": {
-        "spotify": "string"
-      },
-      "href": "string",
-      "id": "string",
-      "name": "string",
-      "type": "artist",
-      "uri": "string"
-    }
-  ],
-  "tracks": {
-    "href": "https://api.spotify.com/v1/me/shows?offset=0&limit=20",
-    "limit": 20,
-    "next": "https://api.spotify.com/v1/me/shows?offset=1&limit=1",
-    "offset": 0,
-    "previous": "https://api.spotify.com/v1/me/shows?offset=1&limit=1",
-    "total": 4,
-    "items": [
-      {
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "string"
-            },
-            "href": "string",
-            "id": "string",
-            "name": "string",
-            "type": "artist",
-            "uri": "string"
-          }
-        ],
-        "available_markets": ["string"],
-        "disc_number": 0,
-        "duration_ms": 0,
-        "explicit": false,
-        "external_urls": {
-          "spotify": "string"
-        },
-        "href": "string",
-        "id": "string",
-        "is_playable": false,
-        "linked_from": {
-          "external_urls": {
-            "spotify": "string"
-          },
-          "href": "string",
-          "id": "string",
-          "type": "string",
-          "uri": "string"
-        },
-        "restrictions": {
-          "reason": "string"
-        },
-        "name": "string",
-        "preview_url": "string",
-        "track_number": 0,
-        "type": "string",
-        "uri": "string",
-        "is_local": false
-      }
-    ]
-  },
-  "copyrights": [
-    {
-      "text": "string",
-      "type": "string"
-    }
-  ],
-  "external_ids": {
-    "isrc": "string",
-    "ean": "string",
-    "upc": "string"
-  },
-  "genres": ["Egg punk", "Noise rock"],
-  "label": "string",
-  "popularity": 0
+// Authorization token that must have been created previously. See : https://developer.spotify.com/documentation/web-api/concepts/authorization
+const token = 'BQCJ3oYZsrWOfC33JjA_TBFtM3dTBFeZ6Q9qPJW70NpbmMitmnOcFpgL2JpFp8uqKA-5yoS67yCsOIRCcuxJDIf5UBAvFUb5yrQeKct6M3EUlIPFFSOEbxkvQzZqyHOIasRvC4o2ozUjOMGVKknCN8VQrdIZsbm5DO7xpd-ZQ7csIM9Lj3xChQv1Q9eK359iLggv1b3AWbdKsuC2SRzykoJQ9ZBtsm8wyW6TpiGjbmHAmndBdHd7VpnFfvyY9SEWjxOkQ0I3aJ5C5ASzFL-0';
+async function fetchWebApi(endpoint, method, body) {
+  const res = await fetch(`https://api.spotify.com/${endpoint}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    method,
+    body:JSON.stringify(body)
+  });
+  return await res.json();
 }
 
-
-{
-  "albums": [
-    {
-      "album_type": "compilation",
-      "total_tracks": 9,
-      "available_markets": ["CA", "BR", "IT"],
-      "external_urls": {
-        "spotify": "string"
-      },
-      "href": "string",
-      "id": "2up3OPMp9Tb4dAKM2erWXQ",
-      "images": [
-        {
-          "url": "https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228",
-          "height": 300,
-          "width": 300
-        }
-      ],
-      "name": "string",
-      "release_date": "1981-12",
-      "release_date_precision": "year",
-      "restrictions": {
-        "reason": "market"
-      },
-      "type": "album",
-      "uri": "spotify:album:2up3OPMp9Tb4dAKM2erWXQ",
-      "artists": [
-        {
-          "external_urls": {
-            "spotify": "string"
-          },
-          "href": "string",
-          "id": "string",
-          "name": "string",
-          "type": "artist",
-          "uri": "string"
-        }
-      ],
-      "tracks": {
-        "href": "https://api.spotify.com/v1/me/shows?offset=0&limit=20",
-        "limit": 20,
-        "next": "https://api.spotify.com/v1/me/shows?offset=1&limit=1",
-        "offset": 0,
-        "previous": "https://api.spotify.com/v1/me/shows?offset=1&limit=1",
-        "total": 4,
-        "items": [
-          {
-            "artists": [
-              {
-                "external_urls": {
-                  "spotify": "string"
-                },
-                "href": "string",
-                "id": "string",
-                "name": "string",
-                "type": "artist",
-                "uri": "string"
-              }
-            ],
-            "available_markets": ["string"],
-            "disc_number": 0,
-            "duration_ms": 0,
-            "explicit": false,
-            "external_urls": {
-              "spotify": "string"
-            },
-            "href": "string",
-            "id": "string",
-            "is_playable": false,
-            "linked_from": {
-              "external_urls": {
-                "spotify": "string"
-              },
-              "href": "string",
-              "id": "string",
-              "type": "string",
-              "uri": "string"
-            },
-            "restrictions": {
-              "reason": "string"
-            },
-            "name": "string",
-            "preview_url": "string",
-            "track_number": 0,
-            "type": "string",
-            "uri": "string",
-            "is_local": false
-          }
-        ]
-      },
-      "copyrights": [
-        {
-          "text": "string",
-          "type": "string"
-        }
-      ],
-      "external_ids": {
-        "isrc": "string",
-        "ean": "string",
-        "upc": "string"
-      },
-      "genres": ["Egg punk", "Noise rock"],
-      "label": "string",
-      "popularity": 0
-    }
-  ]
+async function getTopTracks(){
+  // Endpoint reference : https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks
+  return (await fetchWebApi(
+    'v1/me/top/tracks?time_range=long_term&limit=5', 'GET'
+  )).items;
 }
 
+const topTracks = await getTopTracks();
+console.log(
+  topTracks?.map(
+    ({name, artists}) =>
+      `${name} by ${artists.map(artist => artist.name).join(', ')}`
+  )
+);
 
-
-{
-  "href": "https://api.spotify.com/v1/me/shows?offset=0&limit=20",
-  "limit": 20,
-  "next": "https://api.spotify.com/v1/me/shows?offset=1&limit=1",
-  "offset": 0,
-  "previous": "https://api.spotify.com/v1/me/shows?offset=1&limit=1",
-  "total": 4,
-  "items": [
-    {
-      "artists": [
-        {
-          "external_urls": {
-            "spotify": "string"
-          },
-          "href": "string",
-          "id": "string",
-          "name": "string",
-          "type": "artist",
-          "uri": "string"
-        }
-      ],
-      "available_markets": ["string"],
-      "disc_number": 0,
-      "duration_ms": 0,
-      "explicit": false,
-      "external_urls": {
-        "spotify": "string"
-      },
-      "href": "string",
-      "id": "string",
-      "is_playable": false,
-      "linked_from": {
-        "external_urls": {
-          "spotify": "string"
-        },
-        "href": "string",
-        "id": "string",
-        "type": "string",
-        "uri": "string"
-      },
-      "restrictions": {
-        "reason": "string"
-      },
-      "name": "string",
-      "preview_url": "string",
-      "track_number": 0,
-      "type": "string",
-      "uri": "string",
-      "is_local": false
-    }
-  ]
+// Authorization token that must have been created previously. See : https://developer.spotify.com/documentation/web-api/concepts/authorization
+const token = 'BQCJ3oYZsrWOfC33JjA_TBFtM3dTBFeZ6Q9qPJW70NpbmMitmnOcFpgL2JpFp8uqKA-5yoS67yCsOIRCcuxJDIf5UBAvFUb5yrQeKct6M3EUlIPFFSOEbxkvQzZqyHOIasRvC4o2ozUjOMGVKknCN8VQrdIZsbm5DO7xpd-ZQ7csIM9Lj3xChQv1Q9eK359iLggv1b3AWbdKsuC2SRzykoJQ9ZBtsm8wyW6TpiGjbmHAmndBdHd7VpnFfvyY9SEWjxOkQ0I3aJ5C5ASzFL-0';
+async function fetchWebApi(endpoint, method, body) {
+  const res = await fetch(`https://api.spotify.com/${endpoint}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    method,
+    body:JSON.stringify(body)
+  });
+  return await res.json();
 }
 
-{
-  "href": "https://api.spotify.com/v1/me/shows?offset=0&limit=20",
-  "limit": 20,
-  "next": "https://api.spotify.com/v1/me/shows?offset=1&limit=1",
-  "offset": 0,
-  "previous": "https://api.spotify.com/v1/me/shows?offset=1&limit=1",
-  "total": 4,
-  "items": [
-    {
-      "added_at": "string",
-      "album": {
-        "album_type": "compilation",
-        "total_tracks": 9,
-        "available_markets": ["CA", "BR", "IT"],
-        "external_urls": {
-          "spotify": "string"
-        },
-        "href": "string",
-        "id": "2up3OPMp9Tb4dAKM2erWXQ",
-        "images": [
-          {
-            "url": "https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228",
-            "height": 300,
-            "width": 300
-          }
-        ],
-        "name": "string",
-        "release_date": "1981-12",
-        "release_date_precision": "year",
-        "restrictions": {
-          "reason": "market"
-        },
-        "type": "album",
-        "uri": "spotify:album:2up3OPMp9Tb4dAKM2erWXQ",
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "string"
-            },
-            "href": "string",
-            "id": "string",
-            "name": "string",
-            "type": "artist",
-            "uri": "string"
-          }
-        ],
-        "tracks": {
-          "href": "https://api.spotify.com/v1/me/shows?offset=0&limit=20",
-          "limit": 20,
-          "next": "https://api.spotify.com/v1/me/shows?offset=1&limit=1",
-          "offset": 0,
-          "previous": "https://api.spotify.com/v1/me/shows?offset=1&limit=1",
-          "total": 4,
-          "items": [
-            {
-              "artists": [
-                {
-                  "external_urls": {
-                    "spotify": "string"
-                  },
-                  "href": "string",
-                  "id": "string",
-                  "name": "string",
-                  "type": "artist",
-                  "uri": "string"
-                }
-              ],
-              "available_markets": ["string"],
-              "disc_number": 0,
-              "duration_ms": 0,
-              "explicit": false,
-              "external_urls": {
-                "spotify": "string"
-              },
-              "href": "string",
-              "id": "string",
-              "is_playable": false,
-              "linked_from": {
-                "external_urls": {
-                  "spotify": "string"
-                },
-                "href": "string",
-                "id": "string",
-                "type": "string",
-                "uri": "string"
-              },
-              "restrictions": {
-                "reason": "string"
-              },
-              "name": "string",
-              "preview_url": "string",
-              "track_number": 0,
-              "type": "string",
-              "uri": "string",
-              "is_local": false
-            }
-          ]
-        },
-        "copyrights": [
-          {
-            "text": "string",
-            "type": "string"
-          }
-        ],
-        "external_ids": {
-          "isrc": "string",
-          "ean": "string",
-          "upc": "string"
-        },
-        "genres": ["Egg punk", "Noise rock"],
-        "label": "string",
-        "popularity": 0
-      }
-    }
-  ]
+const topTracksIds = [
+  '5j0Jfr2yehJ4xXq7XuQPs9','4KKW1xJyUoqAa8NgTSsaUg','0iBdjtSnf51q1M7ywAAxNg','3oS9E4e9ZmKMGmnICiiz9p','0rkHYLKfxKoJIgLiKsxr6x'
+];
+
+async function getRecommendations(){
+  // Endpoint reference : https://developer.spotify.com/documentation/web-api/reference/get-recommendations
+  return (await fetchWebApi(
+    `v1/recommendations?limit=5&seed_tracks=${topTracksIds.join(',')}`, 'GET'
+  )).tracks;
 }
 
+const recommendedTracks = await getRecommendations();
+console.log(
+  recommendedTracks.map(
+    ({name, artists}) =>
+      `${name} by ${artists.map(artist => artist.name).join(', ')}`
+  )
+);
 
-{
-    "ids": [
-        "string"
-    ]
+
+
+// Authorization token that must have been created previously. See : https://developer.spotify.com/documentation/web-api/concepts/authorization
+const token = 'BQCJ3oYZsrWOfC33JjA_TBFtM3dTBFeZ6Q9qPJW70NpbmMitmnOcFpgL2JpFp8uqKA-5yoS67yCsOIRCcuxJDIf5UBAvFUb5yrQeKct6M3EUlIPFFSOEbxkvQzZqyHOIasRvC4o2ozUjOMGVKknCN8VQrdIZsbm5DO7xpd-ZQ7csIM9Lj3xChQv1Q9eK359iLggv1b3AWbdKsuC2SRzykoJQ9ZBtsm8wyW6TpiGjbmHAmndBdHd7VpnFfvyY9SEWjxOkQ0I3aJ5C5ASzFL-0';
+async function fetchWebApi(endpoint, method, body) {
+  const res = await fetch(`https://api.spotify.com/${endpoint}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    method,
+    body:JSON.stringify(body)
+  });
+  return await res.json();
 }
 
-{
-  "albums": {
-    "href": "https://api.spotify.com/v1/me/shows?offset=0&limit=20",
-    "limit": 20,
-    "next": "https://api.spotify.com/v1/me/shows?offset=1&limit=1",
-    "offset": 0,
-    "previous": "https://api.spotify.com/v1/me/shows?offset=1&limit=1",
-    "total": 4,
-    "items": [
-      {
-        "album_type": "compilation",
-        "total_tracks": 9,
-        "available_markets": ["CA", "BR", "IT"],
-        "external_urls": {
-          "spotify": "string"
-        },
-        "href": "string",
-        "id": "2up3OPMp9Tb4dAKM2erWXQ",
-        "images": [
-          {
-            "url": "https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228",
-            "height": 300,
-            "width": 300
-          }
-        ],
-        "name": "string",
-        "release_date": "1981-12",
-        "release_date_precision": "year",
-        "restrictions": {
-          "reason": "market"
-        },
-        "type": "album",
-        "uri": "spotify:album:2up3OPMp9Tb4dAKM2erWXQ",
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "string"
-            },
-            "href": "string",
-            "id": "string",
-            "name": "string",
-            "type": "artist",
-            "uri": "string"
-          }
-        ]
-      }
-    ]
-  }
+const tracksUri = [
+  'spotify:track:5j0Jfr2yehJ4xXq7XuQPs9','spotify:track:0lrrOTSB1vEOEphSG8CSsD','spotify:track:4KKW1xJyUoqAa8NgTSsaUg','spotify:track:4PxhcaK06tMkZY4lO636ys','spotify:track:0iBdjtSnf51q1M7ywAAxNg','spotify:track:1bHsh7qMkmTz1cxsygMa3q','spotify:track:3oS9E4e9ZmKMGmnICiiz9p','spotify:track:1YyO0tXr2xt7LhWbw1PBFn','spotify:track:0rkHYLKfxKoJIgLiKsxr6x','spotify:track:4hArxLcGoeEMYHzqfgffT4'
+];
+
+async function createPlaylist(tracksUri){
+  const { id: user_id } = await fetchWebApi('v1/me', 'GET')
+
+  const playlist = await fetchWebApi(
+    `v1/users/${user_id}/playlists`, 'POST', {
+      "name": "My recommendation playlist",
+      "description": "Playlist created by the tutorial on developer.spotify.com",
+      "public": false
+  })
+
+  await fetchWebApi(
+    `v1/playlists/${playlist.id}/tracks?uris=${tracksUri.join(',')}`,
+    'POST'
+  );
+
+  return playlist;
 }
 
-[false, true]
+const createdPlaylist = await createPlaylist(tracksUri);
+console.log(createdPlaylist.name, createdPlaylist.id);
+
+
+
+
+const playlistId = '28te6h1oyOPPRhJfJhU48I';
+
+<iframe
+  title="Spotify Embed: Recommendation Playlist "
+  src={`https://open.spotify.com/embed/playlist/28te6h1oyOPPRhJfJhU48I?utm_source=generator&theme=0`}
+  width="100%"
+  height="100%"
+  style={{ minHeight: '360px' }}
+  frameBorder="0"
+  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+  loading="lazy"
+/>
